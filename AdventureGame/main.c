@@ -11,8 +11,15 @@
 typedef enum {
     empty,
     cube,
-    treasure,
+    treasure
 }RoomValue;
+
+typedef enum {
+    up,
+    down,
+    left,
+    right
+}Direction;
 
 typedef struct {
     RoomValue value;
