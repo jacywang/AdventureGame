@@ -8,30 +8,6 @@
 
 #include <stdio.h>
 
-typedef enum {
-    empty,
-    cube,
-    treasure
-}RoomValue;
-
-typedef enum {
-    up,
-    down,
-    left,
-    right
-}Direction;
-
-typedef struct {
-    RoomValue value;
-    struct Room *next;
-    int roomIndex;
-} Room;
-
-typedef struct {
-    Room *currentRoom;
-    int health;
-}Player;
-
 int main(int argc, const char * argv[]) {
     
     return 0;
