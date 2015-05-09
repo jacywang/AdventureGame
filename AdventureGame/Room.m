@@ -11,7 +11,7 @@
 @implementation Room
 
 -(instancetype)init {
-    self = [super self];
+    self = [super init];
     
     if (self) {
         _exits = [[NSMutableArray alloc] initWithArray:@[@"N", @"S", @"W", @"E"]];

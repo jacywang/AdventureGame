@@ -12,7 +12,7 @@
 @implementation Player
 
 - (instancetype)initWithRoom:(Room *)room{
-    self = [super self];
+    self = [super init];
     
     if (self) {
         _numberOfLives = 2;

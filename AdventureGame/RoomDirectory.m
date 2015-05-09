@@ -13,7 +13,7 @@
 @implementation RoomDirectory
 
 -(instancetype)init {
-    self = [super self];
+    self = [super init];
     
     if (self) {
         _rooms = [[NSMutableArray alloc] init];
