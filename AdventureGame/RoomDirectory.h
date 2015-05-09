@@ -16,8 +16,7 @@
 
 -(void)displayInfo:(Player *)player;
 -(Room *)allocPlayerStartingRoom;
--(void)movePlayer:(Player *)player toRoom: (Room *)room;
--(BOOL)gameOver:(Player *)player;
-
+-(void)movePlayer:(Player *)player withDirection:(NSString *)direction;
+-(NSString *)getDirectionFromPlayer:(Player *)player;
 
 @end

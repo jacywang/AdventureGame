@@ -15,13 +15,13 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         RoomDirectory *roomBoard = [[RoomDirectory alloc] init];
         Player *player = [[Player alloc] initWithRoom:[roomBoard allocPlayerStartingRoom]];
-        
-        while (![roomBoard gameOver:player]) {
+        [roomBoard displayInfo:player];
+
+        while (![player gameOver]) {
+            [roomBoard movePlayer:player withDirection:[roomBoard getDirectionFromPlayer:player]];
             [roomBoard displayInfo:player];
-            
-            break;
         }
-        NSLog(@"LALALAL");
+        
     }
     return 0;
 }

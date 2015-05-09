@@ -15,6 +15,7 @@
 @property (nonatomic) Room *currentRoom;
 
 - (instancetype)initWithRoom:(Room *)room;
+-(BOOL)gameOver;
 
 
 @end

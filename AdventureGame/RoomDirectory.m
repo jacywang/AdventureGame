@@ -48,18 +48,20 @@
         while (treasure == cube) {
             treasure = arc4random_uniform(16);
         }
+        
         [[_rooms objectAtIndex:treasure] setProperty:@"Treasure"];
         
+        NSLog(@"Cube is in room %lu and treasure is in room %lu.", cube + 1, treasure + 1);
     }
     
     return self;
 }
 
 -(Room *)allocPlayerStartingRoom {
-    NSUInteger startingRoomNumber = arc4random_uniform(16) + 1;
+    NSUInteger startingRoomNumber = arc4random_uniform(16);
     Room *startingRoom = self.rooms[startingRoomNumber];
     while ([startingRoom.property isEqualToString:@"Cube"] | [startingRoom.property isEqualToString:@"Treasure" ]) {
-        startingRoomNumber = arc4random_uniform(16) + 1;
+        startingRoomNumber = arc4random_uniform(16);
         startingRoom = self.rooms[startingRoomNumber];
     }
     return startingRoom;
@@ -68,27 +70,42 @@
 
 -(void)displayInfo:(Player *)player {
     Room *currentRoom = player.currentRoom;
-    NSLog(@"You are in room %d with %d lives. And you have exits %@.", currentRoom.index, player.numberOfLives, currentRoom.exits);
+    if (!player.gameOver) {
+        NSLog(@"You are in room %d with %d lives. And you have exits %@. Choose your exit > ", currentRoom.index, player.numberOfLives, currentRoom.exits);
+    }
 }
 
--(void)movePlayer:(Player *)player toRoom: (Room *)room {
-    player.currentRoom = room;
-    if ([room.property isEqualToString:@"Cube"]) {
+-(void)movePlayer:(Player *)player withDirection:(NSString *)direction {
+    int index = player.currentRoom.index;
+    if ([direction isEqualTo:@"N"]) {
+        index -= 4;
+    } else if ([direction isEqualTo:@"S"]) {
+        index += 4;
+    } else if ([direction isEqualTo:@"W"]) {
+        index -= 1;
+    } else if ([direction isEqualTo:@"E"]) {
+        index += 1;
+    }
+    player.currentRoom = _rooms[index - 1];
+    if ([player.currentRoom.property isEqualToString:@"Cube"]) {
         player.numberOfLives--;
     }
 }
 
--(BOOL)gameOver:(Player *)player {
-    if ([player.currentRoom.property isEqualToString: @"Treasure"]) {
-        NSLog(@"You found the treasure! You won!");
-        return YES;
-    }
-    if (player.numberOfLives == 0) {
-        NSLog(@"You lost all your lives. You Lost!");
-        return YES;
-    }
+-(NSString *)getDirectionFromPlayer:(Player *)player {
+    NSArray *directions = player.currentRoom.exits;
+    NSString *direction;
     
-    return NO;
+    do {
+        char str[100];
+        fgets(str, 100, stdin);
+        NSString *input = [[NSString alloc] initWithUTF8String:str];
+        direction = [input stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+        direction = [direction uppercaseString];
+    } while (![directions containsObject:direction]);
+    
+    NSLog(@"You choose direction %@", direction);
+    return direction;
 }
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "Player.h"
+#import "Room.h"
 
 @implementation Player
 
@@ -19,6 +20,19 @@
     }
     
     return self;
+}
+
+-(BOOL)gameOver{
+    if ([self.currentRoom.property isEqualToString: @"Treasure"]) {
+        NSLog(@"You found the treasure! You won!");
+        return YES;
+    }
+    if (self.numberOfLives == 0) {
+        NSLog(@"You lost all your lives. You Lost!");
+        return YES;
+    }
+    
+    return NO;
 }
 
 @end
