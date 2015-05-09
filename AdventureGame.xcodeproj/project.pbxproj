@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9CFC45C31AFB43C5007A2E27 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC45C21AFB43C5007A2E27 /* main.c */; };
+		9CFC46111AFE7352007A2E27 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC46101AFE7352007A2E27 /* Player.m */; };
+		9CFC46141AFE7364007A2E27 /* RoomDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC46131AFE7364007A2E27 /* RoomDirectory.m */; };
+		9CFC46171AFE736B007A2E27 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC46161AFE736B007A2E27 /* Room.m */; };
+		9CFC461C1AFE7BE4007A2E27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC461B1AFE7BE4007A2E27 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +27,13 @@
 
 /* Begin PBXFileReference section */
 		9CFC45BF1AFB43C5007A2E27 /* AdventureGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventureGame; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CFC45C21AFB43C5007A2E27 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		9CFC460F1AFE7352007A2E27 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		9CFC46101AFE7352007A2E27 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		9CFC46121AFE7364007A2E27 /* RoomDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomDirectory.h; sourceTree = "<group>"; };
+		9CFC46131AFE7364007A2E27 /* RoomDirectory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomDirectory.m; sourceTree = "<group>"; };
+		9CFC46151AFE736B007A2E27 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
+		9CFC46161AFE736B007A2E27 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+		9CFC461B1AFE7BE4007A2E27 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +66,13 @@
 		9CFC45C11AFB43C5007A2E27 /* AdventureGame */ = {
 			isa = PBXGroup;
 			children = (
-				9CFC45C21AFB43C5007A2E27 /* main.c */,
+				9CFC461B1AFE7BE4007A2E27 /* main.m */,
+				9CFC460F1AFE7352007A2E27 /* Player.h */,
+				9CFC46101AFE7352007A2E27 /* Player.m */,
+				9CFC46121AFE7364007A2E27 /* RoomDirectory.h */,
+				9CFC46131AFE7364007A2E27 /* RoomDirectory.m */,
+				9CFC46151AFE736B007A2E27 /* Room.h */,
+				9CFC46161AFE736B007A2E27 /* Room.m */,
 			);
 			path = AdventureGame;
 			sourceTree = "<group>";
@@ -118,7 +133,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CFC45C31AFB43C5007A2E27 /* main.c in Sources */,
+				9CFC461C1AFE7BE4007A2E27 /* main.m in Sources */,
+				9CFC46111AFE7352007A2E27 /* Player.m in Sources */,
+				9CFC46171AFE736B007A2E27 /* Room.m in Sources */,
+				9CFC46141AFE7364007A2E27 /* RoomDirectory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +250,7 @@
 				9CFC45C81AFB43C5007A2E27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
